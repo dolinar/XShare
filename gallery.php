@@ -31,7 +31,8 @@
                 echo '      <a href="/images/' . $username . '/' . $value['path'] . '" target="_blank">';
                 echo '      <img src="/images/' . $username . '/' . $value['path'] . '" alt="' . $value['title'] . '" style="width:100%">';
                 echo '      <div class="caption">';
-                echo '          <p style="font-size:22px;"><b>' . $value['title'] . '</b>' . ': ' . $caption . '</p>';
+                echo '          <p style="font-size:18px;">Title: <b>' . $value['title'] . '</b>';
+                echo '          <p style="font-size:18px;">Caption: '.  $caption . '</p>';
                 echo '      </div>';
                 echo '      </a>';
                 echo '  </div>';
