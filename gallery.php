@@ -38,8 +38,6 @@
                 echo '  </div>';
                 echo '</div>';
             }
-
-
             $db->closeConnection();
         ?>
 

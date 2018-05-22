@@ -24,6 +24,7 @@
             $db = new Connection();
 
             $search = isset($_POST['search']) ? $_POST['search'] : 'dsnjdsbdnjsjdsnj';
+            $search = $search == '' ? 'dsnjdsbdnjsjdsnj' : $search;
             $images = $db->getSearchResults($search);
             if(reset($images)) {
                 foreach ($images as $value) {
@@ -32,6 +33,7 @@
                     echo '      <a href="/images/' . $value['username'] . '/' . $value['path'] . '" target="_blank">';
                     echo '      <img src="/images/' . $value['username'] . '/' . $value['path'] . '" alt="' . $value['title'] . '" style="width:100%">';
                     echo '      <div class="caption">';
+                    echo '          <p style="font-size:18px;">From: <b>' . $value['username'] . '</b></p>';
                     echo '          <p style="font-size:18px;">Title: <b>' . $value['title'] . '</b>';
                     echo '          <p style="font-size:18px;">Caption: '.  $value['caption'] . '</p>';
                     echo '      </div>';
@@ -42,8 +44,6 @@
             } else {
                 echo '<h2>There was no results for your search query!</h2>';
             }
-
-
 
             $db->closeConnection();
         ?>
