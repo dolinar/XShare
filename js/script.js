@@ -118,6 +118,7 @@ $(document).ready(function () {
 		offsetVar += 8;
 		$(window).scroll(function(){
 			if($(window).scrollTop() == $(document).height() - $(window).height()) { 
+				
 				loadImages(offsetVar);
 				offsetVar += 8;
 				

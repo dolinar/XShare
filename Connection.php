@@ -122,5 +122,16 @@ class Connection {
         $publicImages->execute();
         return $publicImages->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    function getSearchResults($search) {
+        $getSearch = $this->db->prepare("SELECT image_caption.caption, users.username, images.id_image, images.title, images.public, images.path FROM users
+        LEFT JOIN images ON users.id_user = images.id_user
+        LEFT JOIN image_caption ON images.id_image = image_caption.id_image
+        WHERE users.username LIKE '%" . $search . "%' OR images.title LIKE '%" . $search . "%' OR image_caption.caption LIKE '%" . $search . "%'
+        AND images.public = 1 ORDER BY images.id_image DESC;");
+
+        $getSearch->execute();
+        return $getSearch->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 

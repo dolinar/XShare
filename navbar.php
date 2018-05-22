@@ -13,9 +13,9 @@
           <li><a href="/">Home</a></li>
           <?php endif; ?>
       </ul>
-      <form class="navbar-form navbar-left" action="/action_page.php">
+      <form class="navbar-form navbar-left" action="/search.php" method="post">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Search" name="search">
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit">
               <i class="glyphicon glyphicon-search"></i>
